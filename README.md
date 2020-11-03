@@ -1,3 +1,3 @@
-#Some Simple Web App Uing React
+# Some Simple Web App Uing React
 
 to be continued...
