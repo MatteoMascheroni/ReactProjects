@@ -6,7 +6,7 @@ export default function BirthdayItem({name,age,image}){
             <img src={image} alt="zio bubu" />
             <div>    
                 <h4>{name}</h4>
-                <p>Compie {age+1}</p>
+                <p>Compie {age+1} anni</p>
             </div>
         </article>
     )
