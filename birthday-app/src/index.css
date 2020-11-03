@@ -1,3 +1,7 @@
+:root{
+  --ligth-shadow :5px 5px rgba(0,0,0,0.1);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,38 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+main{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.person img{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--ligth-shadow);
+}
+
+.person{
+  display: flex;
+  margin: 10px;
+
+}
+.person h4{
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+}
+.person div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+}
+.person p{
+  margin: 5px;
 }
