@@ -8,7 +8,7 @@ export default function BirthdayList(){
     return(
         <main>
             <section className="container">
-                <h3>Todays there are {birthday.length} birthdays</h3>
+                <h3>Today there are {birthday.length} birthdays</h3>
                 {birthday.map(item => <BirthdayItem key={item.id} {...item}/>)}
                 {birthday.length > 0 && <button onClick={()=>clearAllData([])}>Clear All</button> }
             </section>
