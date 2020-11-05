@@ -23,11 +23,15 @@ function App() {
       setRev(reviews[id-2])
     }
   }
+
+  const onSurpriseView = (id) =>{
+    setRev(reviews[((id-1)+Math.floor(Math.random()*(reviews.length)))%reviews.length])
+  }
   
   return (
     <main>
       <h3>Our Revies</h3>
-      <Rev {...rev} onNext = {onNextView} onPrev = {onPrevView}/>
+      <Rev {...rev} onNext = {onNextView} onPrev = {onPrevView} onSurprise={onSurpriseView}/>
     </main>
   );
 }

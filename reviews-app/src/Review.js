@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Review ({id,name,job,image,text, onNext = f => f, onPrev = f=> f}) {
+export default function Review ({id,name,job,image,text, onNext = f => f, onPrev = f=> f,onSurprise = f => f}) {
     console.log(id);
     return(
         <article>
@@ -13,7 +13,7 @@ export default function Review ({id,name,job,image,text, onNext = f => f, onPrev
                 <button onClick={() => onNext(id)}>Next</button>
             </div>
             <div>
-                <button>Surprise Me</button>
+                <button onClick={()=> onSurprise(id)}>Surprise Me</button>
             </div>
         </article>
     )
