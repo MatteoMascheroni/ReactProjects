@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import React,{useState} from "react";
+import Rev from "./Review";
+import reviews from "./data";
 
 function App() {
+  const [rev,setRev] = useState(reviews[0]);
+
+  const onNextView = (id) => {
+    if (id === reviews.length){
+      setRev(reviews[0])
+    }
+    else{
+    setRev(reviews[id])
+    }
+  }
+
+  const onPrevView = (id) => {
+    if (id === 1){
+      setRev(reviews[reviews.length-1])
+    }
+    else{
+      setRev(reviews[id-2])
+    }
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <h3>Our Revies</h3>
+      <Rev {...rev} onNext = {onNextView} onPrev = {onPrevView}/>
+    </main>
   );
 }
 
