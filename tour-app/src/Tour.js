@@ -1,11 +1,7 @@
 import React,{useState} from "react"
 
-const Tour = ({image,info,name,price}) => {
+const Tour = ({id,image,info,name,price,onDelete = f => f}) => {
     const [isReadMore, setIsReadMore] = useState(false);
-    const subst = (testo) => {
-        let testo_arr  = testo.split(" ");
-        return(testo_arr.slice(0,(testo.length)/2).join(" "));
-    }
     return(
         <article>
             <h4>{name}</h4>
@@ -16,6 +12,7 @@ const Tour = ({image,info,name,price}) => {
             </button>
             </p>
             <p>Price: {price}</p>
+            <button onClick={() => onDelete(id)}>I'm Not Iterested</button>
         </article>
     )
 }

@@ -13,7 +13,7 @@ function App() {
     try {
       const response =  await fetch(url);
       const tours = await response.json();
-      setIsLoading(!isLoading)
+      setIsLoading(false)
       setTours(tours)
 
     } catch (error){
@@ -21,16 +21,32 @@ function App() {
     }
   }
 
+  const onRemove = (id) => {
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  }
   useEffect(() => {
     fetchTours();
   },[]);
 
   if(isLoading) {
-    return(<Loading/>)
+    return( 
+    <main>
+     <Loading/>
+    </main>)
   }  
+  if(tours.length === 0) {
+    return(
+    <main>
+     <div>
+       No tours left
+       <button onClick={() => fetchTours()}>Refresh</button>
+     </div>
+    </main>)
+  }
   return(
     <div>
-      {tours.map((tour)=>(<Tour key={tour.id} {...tour}/>)) }
+      {tours.map((tour)=>(<Tour key={tour.id} {...tour} onDelete={onRemove}/>)) }
     </div>
   )
 }
