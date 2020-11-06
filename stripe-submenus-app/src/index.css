@@ -30,13 +30,18 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+
 .nav-items {
+  width: 450px;
   display: flex;
-  align-items: center;
+  justify-content: space-around;
 }
-.nav-items li{
-  padding: 0 20px;
+.nav-items li {
+  text-transform: capitalize;
+  font-weight: 400;
+  color: whitesmoke;
 }
+
 ul {
   list-style-type: none;
 }
