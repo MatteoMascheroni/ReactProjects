@@ -1,13 +1,17 @@
 import React from "react"
 import Navbar from "./Navbar"
-import Hero from "./Sidebar"
+import Sidebar from "./Sidebar";
+import Hero from "./Hero"
 import Submenu from "./Submenu"
 
 
 function App() {
   return (
     <div>
-      <h2>stripe submenus setup</h2>
+      <Navbar/>
+      <Sidebar />
+      <Hero />
+      <Submenu/>
     </div>
   );
 }
