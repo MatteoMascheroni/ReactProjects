@@ -15,7 +15,10 @@ export const AppProvider = ({children}) => {
         setIsSidebarOpen(false)
     }
 
-    const openSubmenu = () => {
+    const openSubmenu = (text, coordinates) => {
+        const page = sublinks.find((link) =>link.page === text);
+        setPage(page);
+        sel 
         setIsSubmenuOpen(true)
     }
 
